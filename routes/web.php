@@ -17,13 +17,19 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function(){
 
-    Route::group([
-        'prefix' => 'appointments',
-        'namespace' => 'Appointments',
-        'middleware' => ['auth.patient']
-    ], function(){
-        Route::get('create', 'AppointmentsController@create')->name('appointments.create');
-        Route::post('/', 'AppointmentsController@store')->name('appointments.store');
+    Route::group(['namespace' => 'Appointments'], function(){
+
+        Route::group([
+            'prefix' => 'appointments',
+            'middleware' => ['auth.patient']
+        ], function(){
+            Route::get('/', 'AppointmentsController@index')->name('appointments.index');
+            Route::post('/', 'AppointmentsController@store')->name('appointments.store');
+            Route::get('create', 'AppointmentsController@create')->name('appointments.create');
+            Route::get('edit/{id}', 'AppointmentsController@edit')->name('appointments.edit');
+            Route::patch('update', 'AppointmentsController@update')->name('appointments.update');
+        });
+
     });
 
 });

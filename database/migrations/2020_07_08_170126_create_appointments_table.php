@@ -30,6 +30,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('title');
             $table->text('desc')->nullable();
             $table->timestamp('date');
+            $table->unsignedInteger('period')->default(2);
             $table->string('status')->default('pending');
             $table->timestamps();
         });

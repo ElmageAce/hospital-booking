@@ -5,17 +5,17 @@ namespace App\Http\Controllers\Appointments;
 use App\Appointments\Appointment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateAppointmentRequest;
+use App\Http\Requests\UpdateAppointmentRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class AppointmentsController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param Appointment $appointment
+     * @return JsonResponse
      */
-    public function index()
+    public function index(Appointment $appointment): JsonResponse
     {
         //
     }
@@ -37,8 +37,11 @@ class AppointmentsController extends Controller
      */
     public function store(CreateAppointmentRequest $request, Appointment $appointment): JsonResponse
     {
+        // Check doctor's schedule for availability
+        if($appointment->checkDoctorSchedule($request))
+            return abort(403, "The doctor already has an appointment at the selected time");
         // Book Appointment
-        $new_appointment = $appointment->bookAppointment($request);
+        $appointment->bookAppointment($request);
         // Notify doctor of appointment
 
         //return response
@@ -71,15 +74,29 @@ class AppointmentsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param UpdateAppointmentRequest $request
+     * @param Appointment $appointment
+     * @return JsonResponse
      */
-    public function update(Request $request, $id)
+    public function update(UpdateAppointmentRequest $request, Appointment $appointment): JsonResponse
     {
-        //
+        // Check doctor's schedule for availability
+        if($appointment->checkDoctorSchedule($request))
+            return abort(403, "The doctor already has an appointment at the selected time");
+        // Update appointment
+        $status = $appointment->updateAppointment($request);
+
+        return $status
+            ?
+            response()->json([
+                'status' => 'success',
+                'message' => 'Appointment changed!'
+            ])
+            :
+            response()->json([
+                'status' => 'error',
+                'message' => 'Error updating appointment'
+            ]);
     }
 
     /**

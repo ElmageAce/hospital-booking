@@ -13,9 +13,8 @@ class AppointmentsController extends Controller
 {
     /**
      * @param Appointment $appointment
-     * @return JsonResponse
      */
-    public function index(Appointment $appointment): JsonResponse
+    public function index(Appointment $appointment)
     {
         //
     }
@@ -38,7 +37,7 @@ class AppointmentsController extends Controller
     public function store(CreateAppointmentRequest $request, Appointment $appointment): JsonResponse
     {
         // Check doctor's schedule for availability
-        if($appointment->checkDoctorSchedule($request))
+        if($appointment->checkDoctorSchedule($request->input('doctor'), $request->input('date')))
             return abort(403, "The doctor already has an appointment at the selected time");
         // Book Appointment
         $appointment->bookAppointment($request);
@@ -63,14 +62,13 @@ class AppointmentsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Appointment $appointment
      */
-    public function edit($id)
+    public function edit(Appointment $appointment)
     {
-        //
+        // Make sure patient edits his own appointment
+        if((int)$appointment->patient_id !== (int)auth()->id())
+            return abort(403, "You can't edit another patient's appointment");
     }
 
     /**
@@ -80,8 +78,9 @@ class AppointmentsController extends Controller
      */
     public function update(UpdateAppointmentRequest $request, Appointment $appointment): JsonResponse
     {
+        $data = $request->all();
         // Check doctor's schedule for availability
-        if($appointment->checkDoctorSchedule($request))
+        if($appointment->checkDoctorSchedule($data['doctor'], $data['date'], $data['id']))
             return abort(403, "The doctor already has an appointment at the selected time");
         // Update appointment
         $status = $appointment->updateAppointment($request);

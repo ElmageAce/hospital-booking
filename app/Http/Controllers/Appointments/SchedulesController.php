@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Appointments;
 
+use App\Appointments\Appointment;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateSchedulesRequest;
 use Illuminate\Http\Request;
 
 class SchedulesController extends Controller
@@ -18,58 +20,36 @@ class SchedulesController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param Appointment $appointment
      */
-    public function create()
+    public function show(Appointment $appointment)
     {
         //
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Appointment $appointment
      */
-    public function store(Request $request)
+    public function edit(Appointment $appointment)
     {
-        //
+        // Make sure doctor edits his own schedule
+        if((int)$appointment->doctor_id !== (int)auth()->id())
+            return abort(403, "You can't edit another doctor's schedule");
+
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param UpdateSchedulesRequest $request
+     * @param Appointment $appointment
      */
-    public function show($id)
+    public function update(UpdateSchedulesRequest $request, Appointment $appointment)
     {
-        //
-    }
+        $data = $request->all();
+        // Check doctor's schedule for availability
+        if($appointment->checkDoctorSchedule($data['doctor'], $data['date'], $data['id']))
+            return abort(403, "The doctor already has an appointment at the selected time");
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        $appointment->updateDoctorSchedule($request);
     }
 
     /**

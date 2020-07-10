@@ -57,11 +57,42 @@ class AppointmentBookingTest extends TestCase
     public function auth_patients_can_visit_edit_appointments_page()
     {
         $this->runArtisanCommands();
-        $this->actingAs(factory(User::class)->state('patient')->create());
-        $this->get('/appointments/edit/' . 1)
+        $patient = factory(User::class)->state('patient')->create();
+        $doctor = factory(User::class)->state('doctor')->create();
+        $this->actingAs($patient);
+
+        $appointment = Appointment::create([
+            'patient_id' => $patient->id,
+            'doctor_id' => $doctor->id,
+            'title' => 'Title of appointment',
+            'desc' => 'Description of reasons',
+            'date' => now()->addDays(3)->format('Y-m-d H:i:s'),
+            'status' => 'pending'
+        ]);
+
+        $this->get('/appointments/edit/' . $appointment->id)
             ->assertOk();
     }
+    /** @test */
+    public function auth_patient_cannot_edit_another_patient_appointment()
+    {
+        $this->runArtisanCommands();
 
+        $patient = factory(User::class)->states('patient')->create();
+        $doctor = factory(User::class)->states('doctor')->create();
+
+        $appointment = Appointment::create([
+            'patient_id' => $patient->id,
+            'doctor_id' => $doctor->id,
+            'title' => 'Title of appointment',
+            'desc' => 'Description of reasons',
+            'date' => now()->addDays(3)->format('Y-m-d H:i:s'),
+            'status' => 'pending'
+        ]);
+
+        $this->actingAs(factory(User::class)->states('doctor')->create());
+        $this->get('/appointments/edit/' . $appointment->id)->assertStatus(403);
+    }
 
     /** @test */
     public function auth_doctors_cannot_visit_create_appointments_page()
@@ -85,9 +116,20 @@ class AppointmentBookingTest extends TestCase
     public function auth_doctors_cannot_visit_edit_appointments_page()
     {
         $this->runArtisanCommands();
-        $this->actingAs(factory(User::class)->state('doctor')->create());
+        $patient = factory(User::class)->state('patient')->create();
+        $doctor = factory(User::class)->state('doctor')->create();
+        $this->actingAs($doctor);
 
-        $this->get('/appointments/edit/' . 1)
+        $appointment = Appointment::create([
+            'patient_id' => $patient->id,
+            'doctor_id' => $doctor->id,
+            'title' => 'Title of appointment',
+            'desc' => 'Description of reasons',
+            'date' => now()->addDays(3)->format('Y-m-d H:i:s'),
+            'status' => 'pending'
+        ]);
+
+        $this->get('/appointments/edit/' . $appointment->id)
             ->assertStatus(403);
     }
 
@@ -413,6 +455,37 @@ class AppointmentBookingTest extends TestCase
             'date' => now()->addDays(4)->format('Y-m-d H:i:s'),
             'status' => 'pending'
         ]);
+
+        $response = $this->patch('/appointments/update', [
+            'id' => $appointment->id,
+            'patient' => $patient->id,
+            'doctor' => $doctor->id,
+            'title' => 'updated title',
+            'desc' => 'updated description',
+            'status' => 'pending',
+            'date' => now()->addDays(4)->format('Y-m-d H:i:s')
+        ]);
+
+        $response->assertStatus(403);
+    }
+    /** @test */
+    public function auth_patient_cannot_update_another_patient_appointment()
+    {
+        $this->runArtisanCommands();
+
+        $patient = factory(User::class)->states('patient')->create();
+        $doctor = factory(User::class)->states('doctor')->create();
+
+        $appointment = Appointment::create([
+            'patient_id' => $patient->id,
+            'doctor_id' => $doctor->id,
+            'title' => 'Title of appointment',
+            'desc' => 'Description of reasons',
+            'date' => now()->addDays(3)->format('Y-m-d H:i:s'),
+            'status' => 'pending'
+        ]);
+
+        $this->actingAs(factory(User::class)->states('doctor')->create());
 
         $response = $this->patch('/appointments/update', [
             'id' => $appointment->id,

@@ -5,10 +5,7 @@
 
 <body>
 
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="cssload-speeding-wheel"></div>
-    </div>
+@include('partials.preloader')
 
     <section id="wrapper" class="login-register"
              style="background: url({{ asset('assets/plugins/images/login-register.jpg') }}) no-repeat center center / cover !important;">

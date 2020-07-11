@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -16,7 +17,8 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role_id'
+        'name', 'email', 'password', 'role_id',
+        'avatar', 'address', 'phone', 'dob'
     ];
 
     /**
@@ -36,6 +38,27 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * @param FormRequest $request
+     * @return bool
+     */
+    public function updateUserData(FormRequest $request): bool
+    {
+        $data = $request->all();
+
+        $avatar = null;
+        if($request->hasFile('avatar'))
+            $avatar = storeAvatar($request->file('avatar'));
+
+        return $this->where('id', $data['id'])->update([
+            'name' => $data['name'],
+            'address' => $data['address'],
+            'phone' => $data['phone'],
+            'avatar' => $avatar,
+            'dob' => $data['dob'],
+        ]);
+    }
 
     public function role()
     {

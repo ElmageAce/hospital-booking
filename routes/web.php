@@ -24,7 +24,25 @@ Route::group(['namespace' => 'Settings'], function(){
 
 Route::group(['middleware' => ['auth', 'verified']], function(){
 
-    Route::get('home', 'HomeController@index')->name('home');
+    Route::get('home', 'HomeController@index')->name('dashboard');
+
+    Route::group(['namespace' => 'Profile', 'prefix' => 'profile'], function(){
+
+        Route::get('/{user}', 'ProfileController@show')
+            ->middleware('can:view-patient,user')
+            ->name('profile.user');
+
+        Route::get('edit/{user}', 'ProfileController@edit')
+            ->middleware('can:edit-profile,user')
+            ->name('profile.edit');
+
+        Route::patch('update', 'ProfileController@update')->name('profile.update');
+
+        Route::group(['prefix' => 'json'], function(){
+            Route::get('user/{user}', 'ProfileController@getUserData');
+        });
+
+    });
 
     Route::group(['namespace' => 'Appointments'], function(){
 

@@ -74,6 +74,7 @@
                     email: null,
                     password: null
                 },
+                theme_color: '#01c0c8',
                 hasError: false,
                 requesting: false,
                 signing_in: false

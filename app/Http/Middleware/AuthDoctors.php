@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Gate;
 
 class AuthDoctors
 {
@@ -14,13 +15,8 @@ class AuthDoctors
      */
     public function handle($request, Closure $next)
     {
-        $role = cache()->remember("user:{$request->user()->id}", now()->addDay(),
-            function() use ($request){
-                return $request->user()->role->slug;
-            });
-
-        if($role !== 'doctor')
-            return abort(403);
+        if(Gate::denies('doctor'))
+            return abort(403, "You're not authorized to access this page");
 
         return $next($request);
     }

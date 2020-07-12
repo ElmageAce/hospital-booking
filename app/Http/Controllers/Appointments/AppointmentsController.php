@@ -6,6 +6,7 @@ use App\Appointments\Appointment;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateAppointmentRequest;
 use App\Http\Requests\UpdateAppointmentRequest;
+use App\Http\Resources\Appointment as BookingResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -13,10 +14,12 @@ class AppointmentsController extends Controller
 {
     /**
      * @param Appointment $appointment
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Appointment $appointment)
     {
-        //
+        $pageTitle = 'Appointments';
+        return view('appointments.index', compact('pageTitle'));
     }
 
     /**
@@ -26,7 +29,8 @@ class AppointmentsController extends Controller
      */
     public function create()
     {
-        //
+        $pageTitle = 'New Appointment';
+        return view('appointments.create', compact('pageTitle'));
     }
 
     /**
@@ -89,7 +93,8 @@ class AppointmentsController extends Controller
             ?
             response()->json([
                 'status' => 'success',
-                'message' => 'Appointment changed!'
+                'message' => $request->input('status') === 'canceled'
+                    ? 'Appointment canceled!' : 'Appointment updated!'
             ])
             :
             response()->json([
@@ -99,13 +104,14 @@ class AppointmentsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Appointment $appointment
+     * @return JsonResponse
      */
-    public function destroy($id)
+    public function getAppointments(Appointment $appointment): JsonResponse
     {
-        //
+        return response()->json([
+            'status' => 'success',
+            'data' => BookingResource::collection($appointment->getPatientAppointments( user()->id ))
+        ]);
     }
 }

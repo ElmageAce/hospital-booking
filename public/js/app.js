@@ -98,6 +98,369 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Appointments/CreateAppointment.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Appointments/CreateAppointment.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "CreateAppointment",
+  props: {
+    user_id: Number
+  },
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    getUserData: 'users/getUserData',
+    getDoctors: 'users/getDoctors',
+    getSwal: 'appointments/getSwal',
+    bookAppointment: 'appointments/bookAppointment'
+  })), {}, {
+    resetDoctor: function resetDoctor() {
+      this.$store.commit('appointments/setSelectedDoctor', null);
+    }
+  }),
+  computed: _objectSpread({
+    title: {
+      get: function get() {
+        return this.$store.state.appointments.appointment.title;
+      },
+      set: function set(value) {
+        this.$store.commit('appointments/updateFormTitle', value);
+      }
+    },
+    date: {
+      get: function get() {
+        return this.$store.state.appointments.appointment.date;
+      },
+      set: function set(value) {
+        this.$store.commit('appointments/updateFormDate', value);
+      }
+    },
+    desc: {
+      get: function get() {
+        return this.$store.state.appointments.appointment.desc;
+      },
+      set: function set(value) {
+        this.$store.commit('appointments/updateFormDesc', value);
+      }
+    }
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    requesting: 'appointments/requesting',
+    booking: 'appointments/booking',
+    errors: 'appointments/errors',
+    default_avatar: 'users/default_avatar',
+    selected_doctor: 'appointments/selected_doctor',
+    doctors: 'users/doctors',
+    user: 'users/user'
+  })),
+  created: function created() {
+    this.getUserData(this.user_id);
+    this.getSwal(this.$swal);
+    this.getDoctors();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Appointments/PatientAppointments.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Appointments/PatientAppointments.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "PatientAppointments",
+  props: {
+    user_id: Number
+  },
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    getUserData: 'users/getUserData',
+    getSwal: 'appointments/getSwal',
+    getAppointments: 'appointments/getAppointments',
+    updateAppointment: 'appointments/updateAppointment',
+    toggleAppointment: 'appointments/toggleAppointment'
+  })), {}, {
+    setBadgeClass: function setBadgeClass(status) {
+      if (status === 'completed') return 'label-success';
+      if (status === 'pending') return 'label-warning';
+      if (status === 'canceled') return 'label-danger';
+      return 'label-info';
+    },
+    viewAppointment: function viewAppointment(appointment) {
+      this.$store.commit('appointments/setSelectedAppointment', appointment);
+      this.toggleAppointment();
+    },
+    cancelAppointment: function cancelAppointment(appointment) {
+      var data = {
+        user_id: this.user_id,
+        status: 'canceled'
+      };
+      this.$store.commit('appointments/setSelectedAppointment', appointment);
+      this.updateAppointment(data);
+    }
+  }),
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    requesting: 'appointments/requesting',
+    errors: 'appointments/errors',
+    appointments: 'appointments/appointments',
+    selected_appointment: 'appointments/selected_appointment',
+    viewing_appointment: 'appointments/viewing_appointment',
+    default_avatar: 'users/default_avatar',
+    user: 'users/user'
+  })),
+  created: function created() {
+    this.getAppointments();
+    this.getUserData(this.user_id);
+    this.getSwal(this.$swal);
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Auth/LoginComponent.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Auth/LoginComponent.vue?vue&type=script&lang=js& ***!
@@ -590,6 +953,81 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "DoctorsComponent",
+  props: {
+    user_id: Number
+  },
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    getUserData: 'users/getUserData',
+    getDoctors: 'users/getDoctors'
+  })), {}, {
+    selectDoctor: function selectDoctor(doctor) {
+      this.$store.commit('appointments/setSelectedDoctor', doctor);
+    }
+  }),
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    requesting: 'users/requesting',
+    default_avatar: 'users/default_avatar',
+    selected_doctor: 'appointments/selected_doctor',
+    doctors: 'users/doctors',
+    user: 'users/user'
+  }))
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/MiniProfileComponent.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fragments/MiniProfileComponent.vue?vue&type=script&lang=js& ***!
@@ -668,6 +1106,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })),
   computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
     requesting: 'users/requesting',
+    default_avatar: 'users/default_avatar',
     editing: 'users/editing',
     user: 'users/user'
   }))
@@ -780,6 +1219,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "EditProfileComponent",
@@ -788,8 +1233,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
-      avatar_url: '',
-      default_avatar: '/assets/images/avatars/default_avatar.jpg'
+      avatar_url: ''
     };
   },
   methods: _objectSpread({
@@ -843,8 +1287,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
     requesting: 'users/requesting',
+    updating: 'users/updating',
     errors: 'users/errors',
     editing: 'users/editing',
+    default_avatar: 'users/default_avatar',
     user: 'users/user',
     form: 'users/form'
   })),
@@ -937,9 +1383,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ProfileComponent",
@@ -950,9 +1393,33 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
     getUserData: 'users/getUserData'
   })),
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+  computed: _objectSpread({
+    doctors_visited: function doctors_visited() {
+      var doctors = [];
+
+      if (this.user.appointments) {
+        this.user.appointments.forEach(function (booking) {
+          if (doctors.indexOf(booking.doctor_id) === -1) doctors.push(booking.doctor_id);
+        });
+      }
+
+      return doctors.length;
+    },
+    patients_available: function patients_available() {
+      var patients = [];
+
+      if (this.user.schedules) {
+        this.user.schedules.forEach(function (booking) {
+          if (patients.indexOf(booking.patient_id) === -1) patients.push(booking.patient_id);
+        });
+      }
+
+      return patients.length;
+    }
+  }, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
     requesting: 'users/requesting',
     editing: 'users/editing',
+    default_avatar: 'users/default_avatar',
     user: 'users/user'
   })),
   created: function created() {
@@ -994,6 +1461,25 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, "\n.logo-font[data-v-147d7af6] {\n    font-size: 20px;\n}\n.logo-icon[data-v-147d7af6] {\n    font-size: 35px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.doctors[data-v-794a50e0] {\n    cursor: pointer;\n}\n.doctors[data-v-794a50e0]:hover {\n    border: #0b67cd 1px solid;\n}\n", ""]);
 
 // exports
 
@@ -2229,6 +2715,36 @@ try {
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./AppLogo.vue?vue&type=style&index=0&id=147d7af6&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/AppLogo.vue?vue&type=style&index=0&id=147d7af6&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -6054,6 +6570,752 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Appointments/CreateAppointment.vue?vue&type=template&id=3a254573&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Appointments/CreateAppointment.vue?vue&type=template&id=3a254573&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "w-100" },
+    [
+      _c("doctors-grid", {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.selected_doctor,
+            expression: "!selected_doctor"
+          }
+        ]
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.selected_doctor,
+              expression: "selected_doctor"
+            }
+          ],
+          staticClass: "row"
+        },
+        [
+          _c("div", { staticClass: "col-sm-12" }, [
+            _c("div", { staticClass: "white-box" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-info btn-rounded float-left",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.resetDoctor($event)
+                    }
+                  }
+                },
+                [
+                  _c("i", { staticClass: "fa fa-backward" }),
+                  _vm._v("\n                    Back\n                ")
+                ]
+              ),
+              _vm._v(" "),
+              _c("div", { staticClass: "clearfix" }),
+              _vm._v(" "),
+              _c("h3", { staticClass: "box-title my-5 text-center" }, [
+                _vm._v("Appointment Information")
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  staticClass: "form-material form-horizontal",
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.bookAppointment(_vm.user_id)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "col-xs-12 col-md-6 mb-5" }, [
+                      _c("label", { attrs: { for: "title" } }, [
+                        _vm._v("Service / Title")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.title,
+                              expression: "title"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: { id: "title" },
+                          on: {
+                            change: function($event) {
+                              var $$selectedVal = Array.prototype.filter
+                                .call($event.target.options, function(o) {
+                                  return o.selected
+                                })
+                                .map(function(o) {
+                                  var val = "_value" in o ? o._value : o.value
+                                  return val
+                                })
+                              _vm.title = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            }
+                          }
+                        },
+                        [
+                          _c("option", [_vm._v("Select Service")]),
+                          _vm._v(" "),
+                          _c("option", [_vm._v("Routine Checkup")]),
+                          _vm._v(" "),
+                          _c("option", [_vm._v("Dental Checkup")]),
+                          _vm._v(" "),
+                          _c("option", [_vm._v("Full Body Checkup")]),
+                          _vm._v(" "),
+                          _c("option", [_vm._v("ENT Checkup")]),
+                          _vm._v(" "),
+                          _c("option", [_vm._v("Heart Checkup")]),
+                          _vm._v(" "),
+                          _c("option", [_vm._v("Others")])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errors["title"],
+                              expression: "errors['title']"
+                            }
+                          ],
+                          staticClass: "text-danger"
+                        },
+                        [_vm._v(_vm._s(_vm.errors["title"]))]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-xs-12 col-md-6" }, [
+                      _c("label", { attrs: { for: "date" } }, [
+                        _vm._v("Date & Time of Appointment")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.date,
+                            expression: "date"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "datetime-local",
+                          id: "date",
+                          name: "date",
+                          placeholder: "Enter date and time of appointment"
+                        },
+                        domProps: { value: _vm.date },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.date = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errors["date"],
+                              expression: "errors['date']"
+                            }
+                          ],
+                          staticClass: "text-danger"
+                        },
+                        [_vm._v(_vm._s(_vm.errors["date"]))]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c("label", { attrs: { for: "desc" } }, [
+                        _vm._v("Description / Note")
+                      ]),
+                      _vm._v(" "),
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.desc,
+                            expression: "desc"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { id: "desc", rows: "5" },
+                        domProps: { value: _vm.desc },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.desc = $event.target.value
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errors["desc"],
+                              expression: "errors['desc']"
+                            }
+                          ],
+                          staticClass: "text-danger"
+                        },
+                        [_vm._v(_vm._s(_vm.errors["desc"]))]
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("div", { staticClass: "col-12 text-center" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-info btn-rounded waves-effect waves-light m-r-10",
+                          attrs: { type: "submit", disabled: _vm.requesting }
+                        },
+                        [
+                          _c("i", {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.requesting && _vm.booking,
+                                expression: "requesting && booking"
+                              }
+                            ],
+                            staticClass: "fa fa-spinner fa-spin"
+                          }),
+                          _vm._v(
+                            "\n                                " +
+                              _vm._s(
+                                _vm.requesting && _vm.booking
+                                  ? "Booking"
+                                  : "Book Appointment"
+                              ) +
+                              "\n                            "
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ]
+              )
+            ])
+          ])
+        ]
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Appointments/PatientAppointments.vue?vue&type=template&id=51e0ffc9&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Appointments/PatientAppointments.vue?vue&type=template&id=51e0ffc9&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "white-box mx-0" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm.appointments.length > 0
+          ? _c("div", { staticClass: "table-responsive" }, [
+              _c(
+                "table",
+                { staticClass: "table color-table info-table table-hover" },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.appointments, function(appointment) {
+                      return _c("tr", { key: appointment.id }, [
+                        _c("td", [
+                          _c("h4", [_vm._v(_vm._s(appointment.service))])
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "hidden-xs hidden-sm" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-success",
+                              attrs: {
+                                title: appointment.doctor.name,
+                                href: "/profile/" + appointment.doctor.id
+                              }
+                            },
+                            [
+                              _c("img", {
+                                staticClass: "img-circle img-responsive",
+                                attrs: {
+                                  src:
+                                    appointment.doctor.avatar ||
+                                    _vm.default_avatar,
+                                  width: "48",
+                                  alt: appointment.doctor.name + " avatar"
+                                }
+                              })
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(appointment.date))]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "hidden-xs hidden-sm" }, [
+                          _vm._v(
+                            _vm._s(appointment.start_time) +
+                              " - " +
+                              _vm._s(appointment.stop_time)
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "hidden-xs hidden-sm" }, [
+                          _c(
+                            "span",
+                            {
+                              staticClass: "label",
+                              class: _vm.setBadgeClass(appointment.status)
+                            },
+                            [
+                              _vm._v(
+                                "\n                                    " +
+                                  _vm._s(appointment.status) +
+                                  "\n                                "
+                              )
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "text-right" }, [
+                          _c(
+                            "button",
+                            {
+                              staticClass:
+                                "btn btn-sm btn-rounded btn-info mr-2 mb-2",
+                              attrs: {
+                                "data-toggle": "modal",
+                                "data-target": "#appointment-modal"
+                              },
+                              on: {
+                                click: function($event) {
+                                  return _vm.viewAppointment(appointment)
+                                }
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "fa fa-eye" }),
+                              _vm._v(" View\n                                ")
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              directives: [
+                                {
+                                  name: "show",
+                                  rawName: "v-show",
+                                  value: appointment.status !== "canceled",
+                                  expression:
+                                    "appointment.status !== 'canceled'"
+                                }
+                              ],
+                              staticClass:
+                                "btn btn-sm btn-rounded btn-danger mr-2 mb-2",
+                              on: {
+                                click: function($event) {
+                                  return _vm.cancelAppointment(appointment)
+                                }
+                              }
+                            },
+                            [
+                              _c("i", { staticClass: "fa fa-close" }),
+                              _vm._v(
+                                " Cancel\n                                "
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.requesting && _vm.appointments.length === 0
+          ? _c("p", [_vm._v("You have made no appointments.")])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.requesting && _vm.appointments.length === 0
+          ? _c("div", { staticClass: "text-center" }, [
+              _c("i", { staticClass: "fa fa-cog fa-spin" })
+            ])
+          : _vm._e()
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.viewing_appointment,
+            expression: "viewing_appointment"
+          }
+        ],
+        staticClass: "modal fade",
+        staticStyle: { display: "none" },
+        attrs: {
+          id: "appointment-modal",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "modal-header" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: {
+                    type: "button",
+                    "data-dismiss": "modal",
+                    "aria-hidden": "true"
+                  }
+                },
+                [_vm._v("×")]
+              ),
+              _vm._v(" "),
+              _c("h4", { staticClass: "modal-title" }, [
+                _vm._v(_vm._s(_vm.selected_appointment.service))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("h5", { staticClass: "text-center" }, [_vm._v("Doctor")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-xs-12 col-sm-4" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "text-success",
+                      attrs: {
+                        title: _vm.selected_appointment.doctor.name,
+                        href: "/profile/" + _vm.selected_appointment.doctor.id
+                      }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "img-circle img-responsive",
+                        attrs: {
+                          src:
+                            _vm.selected_appointment.doctor.avatar ||
+                            _vm.default_avatar,
+                          width: "96",
+                          alt: _vm.selected_appointment.doctor.name + " avatar"
+                        }
+                      })
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xs-12 col-sm-8" }, [
+                  _c("ul", { staticClass: "list-icons" }, [
+                    _c("li", [
+                      _c("i", { staticClass: "fa fa-caret-right text-info" }),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "text-secondary font-bold",
+                          attrs: {
+                            href:
+                              "/profile/" + _vm.selected_appointment.doctor.id
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(_vm.selected_appointment.doctor.name) +
+                              "\n                                    "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", { staticClass: "fa fa-caret-right text-info" }),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "text-secondary font-bold",
+                          attrs: {
+                            href:
+                              "mailto:" + _vm.selected_appointment.doctor.email
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(_vm.selected_appointment.doctor.email) +
+                              "\n                                    "
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", { staticClass: "fa fa-caret-right text-info" }),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "text-secondary font-bold",
+                          attrs: {
+                            href:
+                              "tel:" +
+                              _vm.selected_appointment.doctor.phone_number
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                        " +
+                              _vm._s(
+                                _vm.selected_appointment.doctor.phone_number
+                              ) +
+                              "\n                                    "
+                          )
+                        ]
+                      )
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-xs-12 col-md-8" }, [
+                  _c("ul", { staticClass: "list-icons" }, [
+                    _c("li", [
+                      _c("i", { staticClass: "fa fa-caret-right text-info" }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "font-bold" }, [
+                        _vm._v("Date:")
+                      ]),
+                      _vm._v(
+                        "\n                                    " +
+                          _vm._s(_vm.selected_appointment.date) +
+                          "\n                                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("i", { staticClass: "fa fa-caret-right text-info" }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "font-bold" }, [
+                        _vm._v("Time:")
+                      ]),
+                      _vm._v(
+                        "\n                                    " +
+                          _vm._s(_vm.selected_appointment.start_time) +
+                          " - " +
+                          _vm._s(_vm.selected_appointment.stop_time) +
+                          "\n                                "
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-xs-12 col-md-4" }, [
+                  _c(
+                    "span",
+                    {
+                      staticClass: "label",
+                      class: _vm.setBadgeClass(_vm.selected_appointment.status)
+                    },
+                    [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(_vm.selected_appointment.status) +
+                          "\n                            "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 mt-2" }, [
+                  _vm._v(
+                    "\n                            " +
+                      _vm._s(_vm.selected_appointment.desc) +
+                      "\n                        "
+                  )
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-footer" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-default btn-rounded waves-effect",
+                  attrs: { type: "button", "data-dismiss": "modal" }
+                },
+                [_vm._v("Close")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.selected_appointment.status !== "canceled",
+                      expression: "selected_appointment.status !== 'canceled'"
+                    }
+                  ],
+                  staticClass:
+                    "btn btn-danger btn-rounded waves-effect waves-light",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.cancelAppointment(_vm.selected_appointment)
+                    }
+                  }
+                },
+                [_vm._v("Cancel")]
+              )
+            ])
+          ])
+        ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "btn btn-info btn-sm btn-rounded float-right mb-3",
+        attrs: { href: "/appointments/create" }
+      },
+      [
+        _c("i", { staticClass: "fa fa-calendar" }),
+        _vm._v("\n                Book\n            ")
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Service")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "hidden-xs hidden-sm" }, [_vm._v("Doctor")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "hidden-xs hidden-sm" }, [_vm._v("Period")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "hidden-xs hidden-sm" }, [_vm._v("Status")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-right" }, [_vm._v("Action")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Auth/LoginComponent.vue?vue&type=template&id=13ef6760&scoped=true&":
 /*!**********************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Auth/LoginComponent.vue?vue&type=template&id=13ef6760&scoped=true& ***!
@@ -6734,6 +7996,92 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=template&id=794a50e0&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=template&id=794a50e0&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "row" },
+    _vm._l(_vm.doctors, function(doctor) {
+      return _c(
+        "div",
+        { key: doctor.id, staticClass: "col-xs-12 col-sm-6 col-md-4" },
+        [
+          _c("div", { staticClass: "white-box doctors" }, [
+            _c(
+              "div",
+              {
+                staticClass: "row",
+                on: {
+                  click: function($event) {
+                    return _vm.selectDoctor(doctor)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "col-4 text-center" }, [
+                  _c("a", { attrs: { href: "/profile/" + doctor.id } }, [
+                    _c("img", {
+                      staticClass: "img-circle img-responsive",
+                      attrs: {
+                        src: doctor.avatar || _vm.default_avatar,
+                        width: "96",
+                        alt: "user"
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-8" }, [
+                  _c("h3", { staticClass: "box-title m-b-0" }, [
+                    _vm._v(_vm._s(doctor.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("small", [_vm._v("Cardio")]),
+                  _vm._v(" "),
+                  _c("address", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(doctor.address) +
+                        "\n                        "
+                    ),
+                    _c("br"),
+                    _c("br"),
+                    _vm._v(
+                      "\n                        Tel: " +
+                        _vm._s(doctor.phone_number) +
+                        "\n                    "
+                    )
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]
+      )
+    }),
+    0
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/MiniProfileComponent.vue?vue&type=template&id=421aa002&scoped=true&":
 /*!*********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Fragments/MiniProfileComponent.vue?vue&type=template&id=421aa002&scoped=true& ***!
@@ -6754,8 +8102,9 @@ var render = function() {
       _c("img", {
         staticClass: "img-circle img-responsive mx-auto",
         attrs: {
-          src: _vm.user.avatar || "/assets/images/avatars/default_avatar.jpg",
-          alt: "user"
+          src: _vm.user.avatar || _vm.default_avatar,
+          alt: "user",
+          width: "128"
         }
       })
     ]),
@@ -6785,7 +8134,7 @@ var render = function() {
         _c("div", { staticClass: "col-md-6 b-r" }, [
           _c("strong", [_vm._v("Date of Birth")]),
           _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.user.birth_date))])
+          _c("p", [_vm._v(_vm._s(_vm.user.dob))])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-6" }, [
@@ -6858,6 +8207,18 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "col-md-8 col-xs-12" }, [
       _c("div", { staticClass: "white-box" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-rounded btn-info float-left",
+            attrs: { href: "/profile/" + _vm.user_id }
+          },
+          [
+            _c("i", { staticClass: "fa fa-backward" }),
+            _vm._v("\n                Back\n            ")
+          ]
+        ),
+        _vm._v(" "),
         _c("h3", { staticClass: "page-title text-center mb-5" }, [
           _vm._v("User Details")
         ]),
@@ -7132,37 +8493,37 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _vm._m(0)
+            _c("div", { staticClass: "form-group" }, [
+              _c("div", { staticClass: "col-xs-12" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "btn btn-info btn-block btn-rounded waves-effect waves-light",
+                    attrs: { type: "submit", disabled: _vm.requesting }
+                  },
+                  [
+                    _vm.requesting && _vm.updating
+                      ? _c("i", { staticClass: "fa fa-cog" })
+                      : _vm._e(),
+                    _vm._v(
+                      "\n                            " +
+                        _vm._s(
+                          _vm.requesting && _vm.updating ? "Updating" : "Update"
+                        ) +
+                        "\n                        "
+                    )
+                  ]
+                )
+              ])
+            ])
           ]
         )
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("div", { staticClass: "col-xs-12" }, [
-        _c(
-          "button",
-          {
-            staticClass:
-              "btn btn-info btn-block btn-rounded waves-effect waves-light",
-            attrs: { type: "submit" }
-          },
-          [
-            _vm._v(
-              "\n                            Update\n                        "
-            )
-          ]
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -7187,7 +8548,51 @@ var render = function() {
   return _c("div", { staticClass: "row" }, [
     _c("div", { staticClass: "col-md-4 col-xs-12" }, [_c("mini-profile")], 1),
     _vm._v(" "),
-    _vm._m(0)
+    _c("div", { staticClass: "col-md-8 col-xs-12" }, [
+      _c("div", { staticClass: "white-box" }, [
+        _vm.user.appointments
+          ? _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6 col-xs-12 text-center" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("h1", [_vm._v(_vm._s(_vm.user.appointments.length))])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6 col-xs-12 text-center" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("h1", [_vm._v(_vm._s(_vm.doctors_visited))])
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.user.schedules
+          ? _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-6 col-xs-12 text-center" }, [
+                _vm._m(2),
+                _vm._v(" "),
+                _c("h1", [_vm._v(_vm._s(_vm.user.schedules.length))])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6 col-xs-12 text-center" }, [
+                _vm._m(3),
+                _vm._v(" "),
+                _c("h1", [_vm._v(_vm._s(_vm.patients_available))])
+              ])
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("h4", { staticClass: "m-t-30" }, [_vm._v("Latest Checkup Report")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "m-t-30" }, [
+          _vm._v(
+            "\n                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.\n                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.\n                Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus.\n                Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo\n                ligula, porttitor eu, consequat vitae, eleifend ac, enim.\n            "
+          )
+        ])
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -7195,165 +8600,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-8 col-xs-12" }, [
-      _c("div", { staticClass: "white-box" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 col-xs-12 text-center" }, [
-            _c("p", { staticClass: "text-purple" }, [
-              _c("i", { staticClass: "ti-facebook" }),
-              _vm._v(" Appointments\n                    ")
-            ]),
-            _vm._v(" "),
-            _c("h1", [_vm._v("258")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 col-xs-12 text-center" }, [
-            _c("p", { staticClass: "text-blue" }, [
-              _c("i", { staticClass: "ti-twitter" }),
-              _vm._v(" Doctors Visited\n                    ")
-            ]),
-            _vm._v(" "),
-            _c("h1", [_vm._v("125")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("p", { staticClass: "m-t-30" }, [
-          _vm._v(
-            "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim."
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries "
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          )
-        ]),
-        _vm._v(" "),
-        _c("h4", { staticClass: "m-t-30" }, [_vm._v("General Report")]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("h5", [
-          _vm._v("Heart Beat "),
-          _c("span", { staticClass: "pull-right" }, [_vm._v("80")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "progress" }, [
-          _c(
-            "div",
-            {
-              staticClass: "progress-bar progress-bar-success",
-              staticStyle: { width: "80%" },
-              attrs: {
-                role: "progressbar",
-                "aria-valuenow": "80",
-                "aria-valuemin": "0",
-                "aria-valuemax": "100"
-              }
-            },
-            [_c("span", { staticClass: "sr-only" }, [_vm._v("50% Complete")])]
-          )
-        ]),
-        _vm._v(" "),
-        _c("h5", [
-          _vm._v("Blood Pressure"),
-          _c("span", { staticClass: "pull-right" }, [_vm._v("90")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "progress" }, [
-          _c(
-            "div",
-            {
-              staticClass: "progress-bar progress-bar-custom",
-              staticStyle: { width: "90%" },
-              attrs: {
-                role: "progressbar",
-                "aria-valuenow": "90",
-                "aria-valuemin": "0",
-                "aria-valuemax": "100"
-              }
-            },
-            [_c("span", { staticClass: "sr-only" }, [_vm._v("50% Complete")])]
-          )
-        ]),
-        _vm._v(" "),
-        _c("h5", [
-          _vm._v("Sugar"),
-          _c("span", { staticClass: "pull-right" }, [_vm._v("50")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "progress" }, [
-          _c(
-            "div",
-            {
-              staticClass: "progress-bar progress-bar-primary",
-              staticStyle: { width: "50%" },
-              attrs: {
-                role: "progressbar",
-                "aria-valuenow": "50",
-                "aria-valuemin": "0",
-                "aria-valuemax": "100"
-              }
-            },
-            [_c("span", { staticClass: "sr-only" }, [_vm._v("50% Complete")])]
-          )
-        ]),
-        _vm._v(" "),
-        _c("h5", [
-          _vm._v("Haemoglobin"),
-          _c("span", { staticClass: "pull-right" }, [_vm._v("70%")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "progress" }, [
-          _c(
-            "div",
-            {
-              staticClass: "progress-bar progress-bar-danger",
-              staticStyle: { width: "70%" },
-              attrs: {
-                role: "progressbar",
-                "aria-valuenow": "70",
-                "aria-valuemin": "0",
-                "aria-valuemax": "100"
-              }
-            },
-            [_c("span", { staticClass: "sr-only" }, [_vm._v("50% Complete")])]
-          )
-        ]),
-        _vm._v(" "),
-        _c("h4", { staticClass: "m-t-30" }, [_vm._v("ECG Report")]),
-        _vm._v(" "),
-        _c("hr"),
-        _vm._v(" "),
-        _c("div", { staticClass: "stats-row" }, [
-          _c("div", { staticClass: "stat-item" }, [
-            _c("h6", [_vm._v("Pulse")]),
-            _vm._v(" "),
-            _c("b", [_vm._v("85")])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "stat-item" }, [
-            _c("h6", [_vm._v("BP")]),
-            _vm._v(" "),
-            _c("b", [_vm._v("120")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticStyle: { height: "280px" } }, [
-          _c("div", {
-            staticClass: "demo-placeholder",
-            attrs: { id: "placeholder" }
-          })
-        ])
-      ])
+    return _c("p", { staticClass: "text-success" }, [
+      _c("i", { staticClass: "ti-calendar" }),
+      _vm._v(" Appointments\n                    ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-blue" }, [
+      _c("i", { staticClass: "fa fa-user-md" }),
+      _vm._v(" Doctors Visited\n                    ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-success" }, [
+      _c("i", { staticClass: "ti-calendar" }),
+      _vm._v(" Schedules\n                    ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "text-blue" }, [
+      _c("i", { staticClass: "fa fa-user-md" }),
+      _vm._v(" Patients\n                    ")
     ])
   }
 ]
@@ -20809,10 +22085,13 @@ window.Vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm
 
 Vue.component('app-logo', __webpack_require__(/*! ./components/Fragments/AppLogo.vue */ "./resources/js/components/Fragments/AppLogo.vue")["default"]);
 Vue.component('mini-profile', __webpack_require__(/*! ./components/Fragments/MiniProfileComponent.vue */ "./resources/js/components/Fragments/MiniProfileComponent.vue")["default"]);
+Vue.component('doctors-grid', __webpack_require__(/*! ./components/Fragments/DoctorsComponent.vue */ "./resources/js/components/Fragments/DoctorsComponent.vue")["default"]);
 Vue.component('login-component', __webpack_require__(/*! ./components/Auth/LoginComponent.vue */ "./resources/js/components/Auth/LoginComponent.vue")["default"]);
 Vue.component('register-component', __webpack_require__(/*! ./components/Auth/RegisterComponent.vue */ "./resources/js/components/Auth/RegisterComponent.vue")["default"]);
 Vue.component('user-profile', __webpack_require__(/*! ./components/Profile/ProfileComponent.vue */ "./resources/js/components/Profile/ProfileComponent.vue")["default"]);
 Vue.component('edit-profile', __webpack_require__(/*! ./components/Profile/EditProfileComponent.vue */ "./resources/js/components/Profile/EditProfileComponent.vue")["default"]);
+Vue.component('book-appointment', __webpack_require__(/*! ./components/Appointments/CreateAppointment.vue */ "./resources/js/components/Appointments/CreateAppointment.vue")["default"]);
+Vue.component('view-appointments', __webpack_require__(/*! ./components/Appointments/PatientAppointments.vue */ "./resources/js/components/Appointments/PatientAppointments.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -20825,6 +22104,144 @@ var app = new Vue({
   store: _store__WEBPACK_IMPORTED_MODULE_0__["default"],
   el: '#wrapper'
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/Appointments/CreateAppointment.vue":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/Appointments/CreateAppointment.vue ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CreateAppointment_vue_vue_type_template_id_3a254573_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateAppointment.vue?vue&type=template&id=3a254573&scoped=true& */ "./resources/js/components/Appointments/CreateAppointment.vue?vue&type=template&id=3a254573&scoped=true&");
+/* harmony import */ var _CreateAppointment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateAppointment.vue?vue&type=script&lang=js& */ "./resources/js/components/Appointments/CreateAppointment.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CreateAppointment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreateAppointment_vue_vue_type_template_id_3a254573_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateAppointment_vue_vue_type_template_id_3a254573_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "3a254573",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Appointments/CreateAppointment.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Appointments/CreateAppointment.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/Appointments/CreateAppointment.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAppointment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreateAppointment.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Appointments/CreateAppointment.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAppointment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Appointments/CreateAppointment.vue?vue&type=template&id=3a254573&scoped=true&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/js/components/Appointments/CreateAppointment.vue?vue&type=template&id=3a254573&scoped=true& ***!
+  \***************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAppointment_vue_vue_type_template_id_3a254573_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./CreateAppointment.vue?vue&type=template&id=3a254573&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Appointments/CreateAppointment.vue?vue&type=template&id=3a254573&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAppointment_vue_vue_type_template_id_3a254573_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateAppointment_vue_vue_type_template_id_3a254573_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Appointments/PatientAppointments.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/Appointments/PatientAppointments.vue ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PatientAppointments_vue_vue_type_template_id_51e0ffc9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PatientAppointments.vue?vue&type=template&id=51e0ffc9&scoped=true& */ "./resources/js/components/Appointments/PatientAppointments.vue?vue&type=template&id=51e0ffc9&scoped=true&");
+/* harmony import */ var _PatientAppointments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PatientAppointments.vue?vue&type=script&lang=js& */ "./resources/js/components/Appointments/PatientAppointments.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PatientAppointments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PatientAppointments_vue_vue_type_template_id_51e0ffc9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PatientAppointments_vue_vue_type_template_id_51e0ffc9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "51e0ffc9",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Appointments/PatientAppointments.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Appointments/PatientAppointments.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/Appointments/PatientAppointments.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PatientAppointments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PatientAppointments.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Appointments/PatientAppointments.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PatientAppointments_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Appointments/PatientAppointments.vue?vue&type=template&id=51e0ffc9&scoped=true&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/Appointments/PatientAppointments.vue?vue&type=template&id=51e0ffc9&scoped=true& ***!
+  \*****************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PatientAppointments_vue_vue_type_template_id_51e0ffc9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PatientAppointments.vue?vue&type=template&id=51e0ffc9&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Appointments/PatientAppointments.vue?vue&type=template&id=51e0ffc9&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PatientAppointments_vue_vue_type_template_id_51e0ffc9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PatientAppointments_vue_vue_type_template_id_51e0ffc9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -21048,6 +22465,93 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppLogo_vue_vue_type_template_id_147d7af6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AppLogo_vue_vue_type_template_id_147d7af6_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Fragments/DoctorsComponent.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Fragments/DoctorsComponent.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DoctorsComponent_vue_vue_type_template_id_794a50e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DoctorsComponent.vue?vue&type=template&id=794a50e0&scoped=true& */ "./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=template&id=794a50e0&scoped=true&");
+/* harmony import */ var _DoctorsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DoctorsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _DoctorsComponent_vue_vue_type_style_index_0_id_794a50e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css& */ "./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _DoctorsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DoctorsComponent_vue_vue_type_template_id_794a50e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DoctorsComponent_vue_vue_type_template_id_794a50e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "794a50e0",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Fragments/DoctorsComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./DoctorsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_style_index_0_id_794a50e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=style&index=0&id=794a50e0&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_style_index_0_id_794a50e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_style_index_0_id_794a50e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_style_index_0_id_794a50e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_style_index_0_id_794a50e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_style_index_0_id_794a50e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=template&id=794a50e0&scoped=true&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=template&id=794a50e0&scoped=true& ***!
+  \***********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_template_id_794a50e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./DoctorsComponent.vue?vue&type=template&id=794a50e0&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Fragments/DoctorsComponent.vue?vue&type=template&id=794a50e0&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_template_id_794a50e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DoctorsComponent_vue_vue_type_template_id_794a50e0_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -21299,6 +22803,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/users */ "./resources/js/store/modules/users.js");
+/* harmony import */ var _modules_appointments__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/appointments */ "./resources/js/store/modules/appointments.js");
+
 
 
  // Load Vuex
@@ -21308,9 +22814,404 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_0__
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_0__["default"].Store({
   strict: true,
   modules: {
-    users: _modules_users__WEBPACK_IMPORTED_MODULE_2__["default"]
+    users: _modules_users__WEBPACK_IMPORTED_MODULE_2__["default"],
+    appointments: _modules_appointments__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 }));
+
+/***/ }),
+
+/***/ "./resources/js/store/modules/appointments.js":
+/*!****************************************************!*\
+  !*** ./resources/js/store/modules/appointments.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var state = {
+  appointment: {
+    patient: null,
+    doctor: null,
+    title: '',
+    desc: '',
+    date: ''
+  },
+  selected_appointment: {
+    doctor: {}
+  },
+  appointments: [],
+  selected_doctor: null,
+  viewing_appointment: false,
+  requesting: false,
+  booking: false,
+  swal: null,
+  errors: []
+};
+var getters = {
+  selected_doctor: function selected_doctor(state) {
+    return state.selected_doctor;
+  },
+  appointments: function appointments(state) {
+    return state.appointments;
+  },
+  selected_appointment: function selected_appointment(state) {
+    return state.selected_appointment;
+  },
+  appointment: function appointment(state) {
+    return state.appointment;
+  },
+  requesting: function requesting(state) {
+    return state.requesting;
+  },
+  booking: function booking(state) {
+    return state.booking;
+  },
+  viewing_appointment: function viewing_appointment(state) {
+    return state.viewing_appointment;
+  },
+  swal: function swal(state) {
+    return state.swal;
+  },
+  errors: function errors(state) {
+    return state.errors;
+  }
+};
+var actions = {
+  getAppointments: function getAppointments(_ref) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var commit, getters, error, url, response, json;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              commit = _ref.commit, getters = _ref.getters;
+
+              if (!getters.requesting) {
+                _context.next = 3;
+                break;
+              }
+
+              return _context.abrupt("return", false);
+
+            case 3:
+              error = false;
+              url = '/appointments/json/get';
+              commit('setRequesting', true);
+              _context.prev = 6;
+              _context.next = 9;
+              return fetch(url);
+
+            case 9:
+              response = _context.sent;
+              if (response.status !== 200) error = true;
+              _context.next = 13;
+              return response.json();
+
+            case 13:
+              json = _context.sent;
+
+              if (!error && json.status === 'success') {
+                commit('setAppointment', json.data);
+              }
+
+              _context.next = 20;
+              break;
+
+            case 17:
+              _context.prev = 17;
+              _context.t0 = _context["catch"](6);
+              console.error(_context.t0);
+
+            case 20:
+              commit('setRequesting', false);
+
+            case 21:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[6, 17]]);
+    }))();
+  },
+  bookAppointment: function bookAppointment(_ref2, user_id) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var commit, getters, error, response, json, errors, errorKeys;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              commit = _ref2.commit, getters = _ref2.getters;
+
+              if (!(getters.requesting || getters.booking)) {
+                _context2.next = 3;
+                break;
+              }
+
+              return _context2.abrupt("return", false);
+
+            case 3:
+              error = false; // SET patient id
+
+              commit('setPatient', user_id); // SET selected doctors ID
+
+              commit('setDoctor', getters.selected_doctor.id);
+              commit('setErrors', []);
+              commit('setRequesting', true);
+              commit('setBooking', true);
+              _context2.prev = 9;
+              _context2.next = 12;
+              return fetch('/appointments', {
+                method: 'post',
+                body: JSON.stringify(getters.appointment),
+                headers: {
+                  'Content-type': 'application/json',
+                  'X-CSRF-TOKEN': window.Laravel.csrfToken,
+                  "Accept": "application/json, text-plain, */*",
+                  "X-Requested-With": "XMLHttpRequest"
+                },
+                credentials: "same-origin"
+              });
+
+            case 12:
+              response = _context2.sent;
+              if (response.status !== 200) error = true;
+              _context2.next = 16;
+              return response.json();
+
+            case 16:
+              json = _context2.sent;
+
+              if (error) {
+                if (json.errors) {
+                  errors = [];
+                  errorKeys = Object.keys(json.errors);
+                  errorKeys.forEach(function (key) {
+                    errors[key] = json.errors[key][0];
+                  });
+                  commit('setErrors', errors);
+                } // Sweet alert
+
+
+                getters.swal.fire({
+                  title: "Oops!",
+                  text: json.message || "There was an error booking your appointment!",
+                  icon: "error",
+                  confirmButtonColor: '#01c0c8',
+                  confirmButtonText: "Okay"
+                });
+              }
+
+              if (!(json.status === 'success')) {
+                _context2.next = 22;
+                break;
+              }
+
+              _context2.next = 21;
+              return getters.swal.fire({
+                title: "Success!",
+                text: json.message,
+                icon: "success",
+                confirmButtonColor: '#01c0c8',
+                confirmButtonText: "Okay"
+              });
+
+            case 21:
+              window.location.href = '/appointments';
+
+            case 22:
+              _context2.next = 27;
+              break;
+
+            case 24:
+              _context2.prev = 24;
+              _context2.t0 = _context2["catch"](9);
+              console.error(_context2.t0);
+
+            case 27:
+              commit('setRequesting', false);
+              commit('setBooking', false);
+
+            case 29:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[9, 24]]);
+    }))();
+  },
+  updateAppointment: function updateAppointment(_ref3, data) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+      var commit, getters, error, appointment, response, json, errors, errorKeys;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              commit = _ref3.commit, getters = _ref3.getters;
+
+              if (!(getters.requesting || getters.booking)) {
+                _context3.next = 3;
+                break;
+              }
+
+              return _context3.abrupt("return", false);
+
+            case 3:
+              error = false;
+              appointment = getters.selected_appointment;
+              appointment.status = data.status;
+              commit('setErrors', []);
+              commit('setRequesting', true);
+              _context3.prev = 8;
+              _context3.next = 11;
+              return fetch('/appointments/update', {
+                method: 'PATCH',
+                body: JSON.stringify({
+                  id: appointment.id,
+                  patient: data.user_id,
+                  doctor: appointment.doctor.id,
+                  title: appointment.service,
+                  date: appointment.date_string,
+                  desc: appointment.desc,
+                  status: appointment.status
+                }),
+                headers: {
+                  'Content-type': 'application/json',
+                  'X-CSRF-TOKEN': window.Laravel.csrfToken,
+                  "Accept": "application/json, text-plain, */*",
+                  "X-Requested-With": "XMLHttpRequest"
+                },
+                credentials: "same-origin"
+              });
+
+            case 11:
+              response = _context3.sent;
+              if (response.status !== 200) error = true;
+              _context3.next = 15;
+              return response.json();
+
+            case 15:
+              json = _context3.sent;
+
+              if (error) {
+                if (json.errors) {
+                  errors = [];
+                  errorKeys = Object.keys(json.errors);
+                  errorKeys.forEach(function (key) {
+                    errors[key] = json.errors[key][0];
+                  });
+                  commit('setErrors', errors);
+                } // Sweet alert
+
+
+                getters.swal.fire({
+                  title: "Oops!",
+                  text: json.message || "There was an error booking your appointment!",
+                  icon: "error",
+                  confirmButtonColor: '#01c0c8',
+                  confirmButtonText: "Okay"
+                });
+              }
+
+              if (!(json.status === 'success')) {
+                _context3.next = 20;
+                break;
+              }
+
+              _context3.next = 20;
+              return getters.swal.fire({
+                title: "Success!",
+                text: json.message,
+                icon: "success",
+                confirmButtonColor: '#01c0c8',
+                confirmButtonText: "Okay"
+              });
+
+            case 20:
+              commit('setRequesting', false);
+              _context3.next = 26;
+              break;
+
+            case 23:
+              _context3.prev = 23;
+              _context3.t0 = _context3["catch"](8);
+              console.error(_context3.t0);
+
+            case 26:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[8, 23]]);
+    }))();
+  },
+  toggleAppointment: function toggleAppointment(_ref4) {
+    var commit = _ref4.commit,
+        getters = _ref4.getters;
+    commit('setViewing', !getters.viewing_appointment);
+  },
+  getSwal: function getSwal(_ref5, swal) {
+    var commit = _ref5.commit;
+    commit('setSwal', swal);
+  }
+};
+var mutations = {
+  setRequesting: function setRequesting(state, status) {
+    return state.requesting = !!status;
+  },
+  setBooking: function setBooking(state, status) {
+    return state.booking = !!status;
+  },
+  setViewing: function setViewing(state, status) {
+    return state.viewing_appointment = !!status;
+  },
+  setSelectedDoctor: function setSelectedDoctor(state, doctor) {
+    return state.selected_doctor = doctor;
+  },
+  setSelectedAppointment: function setSelectedAppointment(state, appointment) {
+    return state.selected_appointment = appointment;
+  },
+  setAppointment: function setAppointment(state, appointments) {
+    return state.appointments = appointments;
+  },
+  setErrors: function setErrors(state, errors) {
+    return state.errors = errors;
+  },
+  setSwal: function setSwal(state, swal) {
+    return state.swal = swal;
+  },
+  setDoctor: function setDoctor(state, doctor) {
+    return state.appointment.doctor = doctor;
+  },
+  setPatient: function setPatient(state, patient) {
+    return state.appointment.patient = patient;
+  },
+  updateFormTitle: function updateFormTitle(state, title) {
+    return state.appointment.title = title;
+  },
+  updateFormDate: function updateFormDate(state, date) {
+    return state.appointment.date = date;
+  },
+  updateFormDesc: function updateFormDesc(state, desc) {
+    return state.appointment.desc = desc;
+  }
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: state,
+  getters: getters,
+  actions: actions,
+  mutations: mutations
+});
 
 /***/ }),
 
@@ -21344,18 +23245,26 @@ var state = {
   patients: [],
   doctors: [],
   requesting: false,
+  updating: false,
   editing: false,
   has_error: false,
   is_auth_user: false,
   swal: null,
-  errors: []
+  errors: [],
+  default_avatar: '/assets/images/avatars/default_avatar.jpg'
 };
 var getters = {
   user: function user(state) {
     return state.user;
   },
+  doctors: function doctors(state) {
+    return state.doctors;
+  },
   editing: function editing(state) {
     return state.editing;
+  },
+  updating: function updating(state) {
+    return state.updating;
   },
   requesting: function requesting(state) {
     return state.requesting;
@@ -21368,6 +23277,9 @@ var getters = {
   },
   sweet_alert: function sweet_alert(state) {
     return state.swal;
+  },
+  default_avatar: function default_avatar(state) {
+    return state.default_avatar;
   }
 };
 var actions = {
@@ -21419,14 +23331,61 @@ var actions = {
       }, _callee, null, [[4, 15]]);
     }))();
   },
-  updateUserData: function updateUserData(_ref2, id) {
+  getDoctors: function getDoctors(_ref2) {
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-      var commit, getters, error, url, form_obj, formData, property, response, json, errors, errorKeys;
+      var commit, error, url, response, json;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              commit = _ref2.commit, getters = _ref2.getters;
+              commit = _ref2.commit;
+              error = false;
+              url = "/profile/json/doctors";
+              commit('setRequesting', true);
+              _context2.prev = 4;
+              _context2.next = 7;
+              return fetch(url);
+
+            case 7:
+              response = _context2.sent;
+              if (response.status !== 200) error = true;
+              _context2.next = 11;
+              return response.json();
+
+            case 11:
+              json = _context2.sent;
+
+              if (!error && json.status === 'success') {
+                commit('setDoctorsData', json.data);
+              }
+
+              _context2.next = 18;
+              break;
+
+            case 15:
+              _context2.prev = 15;
+              _context2.t0 = _context2["catch"](4);
+              console.error(_context2.t0);
+
+            case 18:
+              commit('setRequesting', false);
+
+            case 19:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[4, 15]]);
+    }))();
+  },
+  updateUserData: function updateUserData(_ref3, id) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+      var commit, getters, error, url, form_obj, formData, property, response, json, errors, errorKeys;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              commit = _ref3.commit, getters = _ref3.getters;
               error = false;
               url = "/profile/update";
               form_obj = getters.form;
@@ -21434,24 +23393,25 @@ var actions = {
               console.log(form_obj);
 
               if (!getters.requesting) {
-                _context2.next = 8;
+                _context3.next = 8;
                 break;
               }
 
-              return _context2.abrupt("return", false);
+              return _context3.abrupt("return", false);
 
             case 8:
-              _context2.prev = 8;
+              _context3.prev = 8;
               formData = new FormData();
               formData.append('_method', 'PATCH');
 
               for (property in form_obj) {
-                if (form_obj.hasOwnProperty(property)) formData.append(property, form_obj[property]);
+                if (form_obj.hasOwnProperty(property) && form_obj[property]) formData.append(property, form_obj[property]);
               }
 
               commit('setErrors', []);
               commit('setRequesting', true);
-              _context2.next = 16;
+              commit('setUpdating', true);
+              _context3.next = 17;
               return fetch(url, {
                 method: 'POST',
                 body: formData,
@@ -21462,14 +23422,14 @@ var actions = {
                 credentials: "same-origin"
               });
 
-            case 16:
-              response = _context2.sent;
+            case 17:
+              response = _context3.sent;
               if (response.status !== 200) error = true;
-              _context2.next = 20;
+              _context3.next = 21;
               return response.json();
 
-            case 20:
-              json = _context2.sent;
+            case 21:
+              json = _context3.sent;
 
               if (error) {
                 if (json.errors) {
@@ -21504,37 +23464,41 @@ var actions = {
                 });
               }
 
-              _context2.next = 28;
+              _context3.next = 29;
               break;
 
-            case 25:
-              _context2.prev = 25;
-              _context2.t0 = _context2["catch"](8);
-              console.error(_context2.t0);
-
-            case 28:
-              commit('setRequesting', false);
+            case 26:
+              _context3.prev = 26;
+              _context3.t0 = _context3["catch"](8);
+              console.error(_context3.t0);
 
             case 29:
+              commit('setRequesting', false);
+              commit('setUpdating', false);
+
+            case 31:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2, null, [[8, 25]]);
+      }, _callee3, null, [[8, 26]]);
     }))();
   },
-  getSwal: function getSwal(_ref3, swal) {
-    var commit = _ref3.commit;
+  getSwal: function getSwal(_ref4, swal) {
+    var commit = _ref4.commit;
     commit('setSwal', swal);
   },
-  editProfile: function editProfile(_ref4) {
-    var commit = _ref4.commit;
+  editProfile: function editProfile(_ref5) {
+    var commit = _ref5.commit;
     commit('setEditing', true);
   }
 };
 var mutations = {
   setRequesting: function setRequesting(state, status) {
     return state.requesting = !!status;
+  },
+  setUpdating: function setUpdating(state, status) {
+    return state.updating = !!status;
   },
   setUserData: function setUserData(state, value) {
     return state.user = value;
@@ -21554,9 +23518,12 @@ var mutations = {
       name: user.name,
       avatar: null,
       dob: user.birth_date,
-      phone: user.phone,
+      phone: user.phone_number,
       address: user.address
     };
+  },
+  setDoctorsData: function setDoctorsData(state, doctors) {
+    return state.doctors = doctors;
   },
   updateFormName: function updateFormName(state, name) {
     return state.form.name = name;

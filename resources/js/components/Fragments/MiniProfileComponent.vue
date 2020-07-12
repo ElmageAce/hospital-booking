@@ -1,8 +1,8 @@
 <template>
     <div class="white-box">
         <div class="text-center">
-            <img :src="user.avatar || '/assets/images/avatars/default_avatar.jpg'"
-                 alt="user" class="img-circle img-responsive mx-auto">
+            <img :src="user.avatar || default_avatar"
+                 alt="user" class="img-circle img-responsive mx-auto" width="128">
         </div>
         <div class="user-btm-box">
             <!-- .row -->
@@ -25,7 +25,7 @@
             <!-- .row -->
             <div class="row text-center m-t-10">
                 <div class="col-md-6 b-r"><strong>Date of Birth</strong>
-                    <p>{{ user.birth_date }}</p>
+                    <p>{{ user.dob }}</p>
                 </div>
                 <div class="col-md-6"><strong>Phone</strong>
                     <p>{{ user.phone_number }}</p>
@@ -68,6 +68,7 @@
 
             ...mapGetters({
                 requesting: 'users/requesting',
+                default_avatar: 'users/default_avatar',
                 editing: 'users/editing',
                 user: 'users/user'
             }),

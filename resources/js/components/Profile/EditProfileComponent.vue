@@ -12,6 +12,11 @@
         <div class="col-md-8 col-xs-12">
             <div class="white-box">
 
+                <a :href="`/profile/${user_id}`" class="btn btn-rounded btn-info float-left">
+                    <i class="fa fa-backward"></i>
+                    Back
+                </a>
+
                 <h3 class="page-title text-center mb-5">User Details</h3>
 
                 <form @submit.prevent="updateUserData(user_id)" class="form-material form-horizontal">
@@ -72,8 +77,9 @@
 
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <button type="submit" class="btn btn-info btn-block btn-rounded waves-effect waves-light">
-                                Update
+                            <button type="submit" :disabled="requesting" class="btn btn-info btn-block btn-rounded waves-effect waves-light">
+                                <i v-if="requesting && updating" class="fa fa-cog"></i>
+                                {{ requesting && updating ? 'Updating' : 'Update' }}
                             </button>
                         </div>
                     </div>
@@ -98,7 +104,6 @@
         data(){
             return {
                 avatar_url: '',
-                default_avatar: '/assets/images/avatars/default_avatar.jpg',
             }
         },
         methods: {
@@ -167,9 +172,13 @@
 
                 requesting: 'users/requesting',
 
+                updating: 'users/updating',
+
                 errors: 'users/errors',
 
                 editing: 'users/editing',
+
+                default_avatar: 'users/default_avatar',
 
                 user: 'users/user',
 

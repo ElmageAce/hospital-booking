@@ -2,6 +2,7 @@
 
 namespace App\Appointments;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Carbon;
@@ -77,7 +78,10 @@ class Appointment extends Model
 
     public function getPatientAppointments(int $patient_id): Collection
     {
-        return $this->where('patient_id', $patient_id)->latest()->get();
+        return $this->where('patient_id', $patient_id)
+            ->where('status', '!=', $this->status['moved'])
+            ->with('doctor')
+            ->latest()->get();
     }
 
     public function updateDoctorSchedule(FormRequest $request)
@@ -105,6 +109,17 @@ class Appointment extends Model
         }
 
         return true;
+    }
+
+
+    public function doctor()
+    {
+        return $this->belongsTo(User::class, 'doctor_id');
+    }
+
+    public function patient()
+    {
+        return $this->belongsTo(User::class, 'patient_id');
     }
 
 }

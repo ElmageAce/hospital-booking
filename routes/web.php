@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
 
         Route::group(['prefix' => 'json'], function(){
             Route::get('user/{user}', 'ProfileController@getUserData');
+            Route::get('doctors', 'ProfileController@getDoctors');
         });
 
     });
@@ -54,6 +55,11 @@ Route::group(['middleware' => ['auth', 'verified']], function(){
             Route::get('create', 'AppointmentsController@create')->name('appointments.create');
             Route::get('edit/{appointment}', 'AppointmentsController@edit')->name('appointments.edit');
             Route::patch('update', 'AppointmentsController@update')->name('appointments.update');
+
+            Route::group(['prefix' => 'json'], function(){
+                Route::get('get', 'AppointmentsController@getAppointments');
+            });
+
         });
 
         Route::group([

@@ -30,11 +30,16 @@ import store from './store';
 
 Vue.component('app-logo', require('./components/Fragments/AppLogo.vue').default);
 Vue.component('mini-profile', require('./components/Fragments/MiniProfileComponent.vue').default);
+Vue.component('doctors-grid', require('./components/Fragments/DoctorsComponent.vue').default);
 
 Vue.component('login-component', require('./components/Auth/LoginComponent.vue').default);
 Vue.component('register-component', require('./components/Auth/RegisterComponent.vue').default);
+
 Vue.component('user-profile', require('./components/Profile/ProfileComponent.vue').default);
 Vue.component('edit-profile', require('./components/Profile/EditProfileComponent.vue').default);
+
+Vue.component('book-appointment', require('./components/Appointments/CreateAppointment.vue').default);
+Vue.component('view-appointments', require('./components/Appointments/PatientAppointments.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

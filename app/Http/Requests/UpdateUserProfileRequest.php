@@ -26,7 +26,7 @@ class UpdateUserProfileRequest extends FormRequest
         return [
             'id' => 'bail|required|integer|exists:users,id',
             'name' => 'bail|required|string',
-            'avatar' => 'bail|nullable|string|image|max:2048',
+            'avatar' => 'bail|nullable|image|max:2048',
             'address' => 'bail|required|string',
             'phone' => 'bail|required|string',
             'dob' => 'bail|required|string|date'

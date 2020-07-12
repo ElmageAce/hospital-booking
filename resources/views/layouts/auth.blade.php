@@ -5,7 +5,9 @@
 
 <body>
 
-@include('partials.preloader')
+@if(request()->route()->getName() === 'index' || request()->route()->getName() === 'dashboard')
+    @include('partials.preloader')
+@endif
 
 <div id="wrapper">
 

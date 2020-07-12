@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Appointments\Appointment;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Foundation\Http\FormRequest;
@@ -41,9 +42,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     /**
      * @param FormRequest $request
-     * @return bool
+     * @return User $user
      */
-    public function updateUserData(FormRequest $request): bool
+    public function updateUserData(FormRequest $request): User
     {
         $data = $request->all();
 
@@ -51,17 +52,38 @@ class User extends Authenticatable implements MustVerifyEmail
         if($request->hasFile('avatar'))
             $avatar = storeAvatar($request->file('avatar'));
 
-        return $this->where('id', $data['id'])->update([
+        $this->where('id', $data['id'])->update([
             'name' => $data['name'],
             'address' => $data['address'],
             'phone' => $data['phone'],
             'avatar' => $avatar,
             'dob' => $data['dob'],
         ]);
+
+        return $this->find($data['id']);
+    }
+
+    /**
+     * @param int $id
+     * @return User
+     */
+    public function getById(int $id): User
+    {
+        return $this->find($id);
     }
 
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class, 'patient_id');
+    }
+
+    public function schedules()
+    {
+        return $this->hasMany(Appointment::class, 'doctor_id');
     }
 }

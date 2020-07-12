@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUserProfileRequest;
+use App\Role;
 use App\User;
 use App\Http\Resources\User as UserResource;
 use Illuminate\Http\JsonResponse;
@@ -52,19 +53,13 @@ class ProfileController extends Controller
         // Authorize user to update profile
         $this->authorize('update-profile', $request->input('id'));
         // Update user data
-        $status = $user->updateUserData($request);
+        $updatedUser = $user->updateUserData($request);
 
-        return $status ?
-            response()->json([
-                'status' => 'success',
-                'message' => 'User profile updated successfully!',
-                'data' => $user
-            ], 200)
-            :
-            response()->json([
-                'status' => 'error',
-                'message' => 'Error updating user profile'
-            ], 200);
+        return response()->json([
+            'status' => 'success',
+            'message' => 'User profile updated successfully!',
+            'data' => new UserResource($updatedUser)
+        ], 200);
     }
 
     /**
@@ -84,10 +79,25 @@ class ProfileController extends Controller
      */
     public function getUserData(User $user): JsonResponse
     {
-        $user->info;
+        $role = $user->role;
+
+        if($role->slug === 'doctor') {
+            $user->schedules;
+        } else {
+            $user->appointments;
+        }
+
         return response()->json([
             'status' => 'success',
             'data' => new UserResource($user)
+        ]);
+    }
+
+    public function getDoctors(Role $role): JsonResponse
+    {
+        return response()->json([
+            'status' => 'success',
+            'data' => UserResource::collection($role->getDoctors())
         ]);
     }
 }
